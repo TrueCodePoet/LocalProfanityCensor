@@ -1,7 +1,5 @@
 # Contributing
 
-Contributions are welcome. Keep changes focused, testable, and friendly to home users who may not be developers.
-
 ## Guidelines
 
 - Do not commit media files, transcripts, generated reports, model weights, local cache folders, or personal paths.
