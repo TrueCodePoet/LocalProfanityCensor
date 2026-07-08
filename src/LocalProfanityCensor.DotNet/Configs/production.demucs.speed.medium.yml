@@ -1,0 +1,37 @@
+processing:
+  cc_first: false
+  asr_fallback: true
+  collect_reference_transcripts: false
+  language: en
+  overwrite: true
+  default_censored_audio_track: false
+
+censor:
+  mode: mute
+  padding_start_ms: 120
+  padding_end_ms: 900
+  merge_gap_ms: 150
+
+transcription:
+  engine: caption-refine-whisper
+  model: medium
+  device: cuda
+  compute_type: auto
+  word_timestamps: true
+  vad_filter: true
+  dialog_isolation: demucs
+  demucs_profile: speed
+  demucs_device: auto
+  hard_window_fallback_engine: none
+  hard_window_confidence_threshold: 0.5
+
+subtitles:
+  allowed_languages:
+    - en
+    - eng
+  min_caption_count: 5
+  min_score: 60
+  timing_offset_ms: 0
+  generate_censored_subtitle: false
+  generate_plain_subtitle_if_missing: true
+  default_censored_subtitle: false

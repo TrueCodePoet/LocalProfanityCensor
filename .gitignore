@@ -1,0 +1,67 @@
+# Build outputs
+bin/
+obj/
+artifacts/
+artifacts*/
+**/bin/
+**/obj/
+**/artifacts/
+**/artifacts*/
+
+# Generated bundle outputs
+bundles/*/Payload/*
+!bundles/*/Payload/.gitkeep
+bundles/*/Configs/*
+!bundles/*/Configs/.gitkeep
+bundles/*/Dictionaries/*
+!bundles/*/Dictionaries/.gitkeep
+bundles/*/Scripts/*
+!bundles/*/Scripts/.gitkeep
+
+# Local runtime and model caches
+.venv/
+venv/
+runtime/
+models/*
+!models/README.md
+!models/.gitkeep
+hf-home/
+huggingface-cache/
+transformers/
+
+# Processing work and reports
+.work/
+.state/
+logs/
+tmp/
+temp/
+*.report.json
+*.report.csv
+transcript_resolution.json
+alignment_request.json
+aligned_transcript*.json
+
+# Large media and generated audio/video
+*.mkv
+*.mp4
+*.m4v
+*.avi
+*.m2ts
+*.mov
+*.wav
+*.flac
+*.aac
+*.eac3
+*.mp3
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vs/
+.vscode/
+*.user
+*.suo

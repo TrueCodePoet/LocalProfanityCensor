@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
+     xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
+  <Package
+    Name="LocalProfanityCensor"
+    Manufacturer="LocalProfanityCensor"
+    Version="1.0.0"
+    UpgradeCode="A6A4D0A8-8D0A-4E6A-9A2B-1D6A9A0B4C11"
+    Language="1033"
+    Scope="perMachine">
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+
+    <StandardDirectory Id="ProgramFiles64Folder">
+      <Directory Id="INSTALLFOLDER" Name="LocalProfanityCensor">
+        <Component Id="MainExecutableComponent" Guid="B1A4A4D0-1F2A-4C5D-9E7F-123456789001">
+          <File Id="MainExecutableFile" Source="$(var.StageDir)\LocalProfanityCensor.DotNet.exe" KeyPath="yes" />
+        </Component>
+
+        <Component Id="ConfigDirectoryComponent" Guid="B1A4A4D0-1F2A-4C5D-9E7F-123456789002">
+          <CreateFolder />
+        </Component>
+
+        <Directory Id="CONFIGSDIR" Name="Configs">
+          <Component Id="ProductionConfigComponent" Guid="B1A4A4D0-1F2A-4C5D-9E7F-123456789003">
+            <File Id="ProductionConfigFile" Source="$(var.StageDir)\Configs\production.demucs.depth.censored-option.yml" KeyPath="yes" />
+          </Component>
+        </Directory>
+
+        <Directory Id="DICTIONARYDIR" Name="Dictionaries">
+          <Component Id="DictionaryComponent" Guid="B1A4A4D0-1F2A-4C5D-9E7F-123456789004">
+            <File Id="DictionaryFile" Source="$(var.StageDir)\Dictionaries\profanity.example.yml" KeyPath="yes" />
+          </Component>
+        </Directory>
+      </Directory>
+    </StandardDirectory>
+
+    <Feature Id="MainFeature" Title="LocalProfanityCensor" Level="1">
+      <ComponentRef Id="MainExecutableComponent" />
+      <ComponentRef Id="ConfigDirectoryComponent" />
+      <ComponentRef Id="ProductionConfigComponent" />
+      <ComponentRef Id="DictionaryComponent" />
+    </Feature>
+
+    <ui:WixUI Id="WixUI_InstallDir" InstallDirectory="INSTALLFOLDER" />
+    <WixVariable Id="WixUILicenseRtf" Value="..\Assets\LICENSE.rtf" />
+  </Package>
+</Wix>

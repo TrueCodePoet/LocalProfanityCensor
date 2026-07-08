@@ -1,0 +1,190 @@
+﻿# Content warning: this example dictionary contains explicit and offensive terms.
+# The terms are included only because profanity filtering needs concrete match
+# configuration to validate detection, replacement, subtitles, and reports.
+# You do not need to open or edit this file unless you are customizing the
+# censor policy for your own use.
+
+terms:
+  - id: profanity_fuck_family
+    pattern: "fuck"
+    type: word
+    severity: high
+    variants:
+      - "fucka"
+      - "fucking"
+      - "fucker"
+      - "fuckers"
+      - "fuckin"
+      - "fuckface"
+      - "fuckhead"
+      - "fuckwad"
+      - "fuckwit"
+      - "fucktard"
+      - "fucked"
+      - "fucks"
+    action: beep
+    replacement: "fork"
+
+  - id: profanity_motherfucker
+    pattern: "motherfucker"
+    type: word
+    severity: high
+    variants:
+      - "mother fuck"
+      - "mother fucker"
+      - "mother fuckers"
+      - "motherfucked"
+      - "motherfucking"
+      - "motherfuckers"
+      - "motherfuckings"
+    action: beep
+    replacement: "motherforker"
+
+  - id: profanity_shit_family
+    pattern: "shit"
+    type: word
+    severity: high
+    variants:
+      - "bullshit"
+      - "holy shit"
+      - "piece of shit"
+      - "horseshit"
+      - "shithead"
+      - "shitface"
+      - "shitlist"
+      - "shits"
+      - "shitty"
+      - "shitted"
+      - "shitting"
+    action: beep
+    replacement: "shoot"
+
+  - id: profanity_dickless
+    pattern: "dickless"
+    type: word
+    severity: high
+    action: beep
+    replacement: "spineless"
+
+  - id: profanity_dick_family
+    pattern: "dick"
+    type: word
+    severity: high
+    variants:
+      - "dicks"
+      - "dickhead"
+      - "dickwad"
+      - "dickweed"
+      - "dickface"
+    action: beep
+    replacement: "jerk"
+
+  - id: profanity_racial_slur_nigga
+    pattern: "nigga"
+    type: word
+    severity: high
+    variants:
+      - "niggah"
+      - "nigger"
+      - "niggas"
+      - "niggers"
+    action: beep
+    replacement: "person"
+
+  - id: profanity_goddamn_family
+    pattern: "goddamn"
+    type: word
+    severity: medium
+    variants:
+      - "god damn"
+      - "goddammit"
+      - "goddamnit"
+      - "goddamn it"
+    action: beep
+    replacement: "gosh darn"
+
+  - id: profanity_damn_family
+    pattern: "damn"
+    type: word
+    severity: medium
+    variants:
+      - "damned"
+      - "damnedest"
+    action: beep
+    replacement: "darn"
+
+  - id: profanity_hell
+    pattern: "hell"
+    type: word
+    severity: medium
+    variants:
+      - "what the hell"
+    action: beep
+    replacement: "heck"
+
+  - id: profanity_bitch
+    pattern: "bitch"
+    type: word
+    severity: high
+    variants:
+      - "son of a bitch"
+      - "bitches"
+      - "bitching"
+      - "bitchy"
+    action: beep
+    replacement: "witch"
+
+  - id: profanity_bastard
+    pattern: "bastard"
+    type: word
+    severity: medium
+    variants:
+      - "bastards"
+    action: beep
+    replacement: "rascal"
+
+  - id: profanity_asshole
+    pattern: "asshole"
+    type: word
+    severity: high
+    variants:
+      - "ass hole"
+      - "assholes"
+      - "ass holes"
+    action: beep
+    replacement: "jerk"
+
+  - id: profanity_gook
+    pattern: "gook"
+    type: word
+    severity: high
+    variants:
+      - "gooks"
+    action: beep
+    replacement: "person"
+
+  - id: profanity_pussy
+    pattern: "pussy"
+    type: word
+    severity: high
+    variants:
+      - "pussies"
+    action: beep
+    replacement: "cat"
+
+  - id: profanity_piss_family
+    pattern: "piss"
+    type: word
+    severity: medium
+    variants:
+      - "pissed"
+      - "pissing"
+    action: beep
+    replacement: "pee"
+
+allowlist:
+  - "assistant"
+  - "Scunthorpe"
+  - "Dickie"
+  - "passenger"
+  - "assume"

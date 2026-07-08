@@ -1,0 +1,17 @@
+<Project Sdk="WixToolset.Sdk/6.0.2">
+  <PropertyGroup>
+    <OutputType>Package</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <Platform>x64</Platform>
+    <DefineConstants>StageDir=$(LPC_STAGE_DIR)</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WixToolset.UI.wixext" Version="6.0.2" />
+    <PackageReference Include="WixToolset.Util.wixext" Version="6.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <BindPath Include="$(LPC_STAGE_DIR)" />
+  </ItemGroup>
+</Project>
