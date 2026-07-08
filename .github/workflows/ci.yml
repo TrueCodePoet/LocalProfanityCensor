@@ -31,8 +31,11 @@ jobs:
       - name: Validate starter dictionary
         run: dotnet run --project .\src\LocalProfanityCensor.DotNet --configuration Release -- validate-dictionary .\src\LocalProfanityCensor.DotNet\Dictionaries\profanity.example.yml
 
+      - name: Install ffmpeg
+        run: choco install ffmpeg --no-progress -y
+
       - name: Health check smoke test
-        run: dotnet run --project .\src\LocalProfanityCensor.DotNet --configuration Release -- health-check --mode mute --no-prompt
+        run: dotnet run --project .\src\LocalProfanityCensor.DotNet --configuration Release -- health-check --mode mute --scope core --no-prompt
 
       - name: Publish core payload smoke test
         shell: pwsh
